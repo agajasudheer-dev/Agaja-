@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { personalData, heroCodeSnippet, projectsData } from '../data/content';
 import { playFireworkSound, playTabSwitch } from '../utils/cyberAudio';
+import agajaProfile from '../assets/agaja-profile.jpg';
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState('js');
@@ -145,7 +146,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6 px-2"
+          className="flex justify-center mb-4 px-2"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-space-900/85 border border-neon-cyan/30 backdrop-blur-md shadow-[0_0_15px_rgba(34,211,238,0.2)] max-w-full">
             <span className="w-2 h-2 rounded-full bg-neon-cyan animate-ping shrink-0" />
@@ -161,6 +162,57 @@ export default function HeroSection() {
             <span className="font-mono text-[11px] text-neon-cyan hidden md:inline">
               {personalData.college.split(',')[0]}
             </span>
+          </div>
+        </motion.div>
+
+        {/* Holographic Cyber Avatar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative mx-auto mb-6 flex flex-col items-center"
+        >
+          <div
+            onClick={triggerFireworks}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && triggerFireworks(e)}
+            title="Click for cyber fireworks! ✨"
+            className="relative group cursor-pointer select-none"
+          >
+            {/* Outer Rotating Conic Neon Halo */}
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-neon-cyan via-neon-purple to-neon-magenta opacity-70 blur-md group-hover:opacity-100 group-hover:blur-lg transition-all duration-500 animate-spin [animation-duration:12s]" />
+            
+            {/* Concentric Cyber Reticle Ring */}
+            <div className="absolute -inset-1 rounded-full border border-dashed border-neon-cyan/50 animate-spin [animation-duration:25s] pointer-events-none" />
+
+            {/* Avatar Frame Container */}
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-neon-cyan bg-space-950 p-1 shadow-[0_0_30px_rgba(34,211,238,0.45)] group-hover:border-white transition-colors duration-300">
+              <img
+                src={agajaProfile}
+                alt={personalData.name}
+                className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500"
+              />
+              {/* Subtle futuristic scanline/vignette overlay */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-space-950/40 via-transparent to-neon-cyan/10 pointer-events-none" />
+            </div>
+
+            {/* Live Status indicator node */}
+            <div className="absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-space-950 border-2 border-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
+
+            {/* Corner HUD reticle marks */}
+            <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-neon-cyan pointer-events-none" />
+            <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-neon-cyan pointer-events-none" />
+            <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-neon-cyan pointer-events-none" />
+            <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-neon-cyan pointer-events-none" />
+          </div>
+
+          {/* Cyber ID Badge under photo */}
+          <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-space-900/90 border border-white/10 text-[10px] font-mono text-slate-300 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan" />
+            <span>OPERATIVE // AGAJA</span>
           </div>
         </motion.div>
 

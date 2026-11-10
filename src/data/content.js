@@ -8,6 +8,7 @@
 
 export const personalData = {
   name: "Agaja",
+  avatar: "./agaja-profile.jpg",
   role: "First-year B.Tech student, Computer Science & Engineering (AI)",
   college: "Thejus Engineering College, Thrissur, Kerala, India",
   tagline: "Aspiring AI Engineer & Full Stack Developer",

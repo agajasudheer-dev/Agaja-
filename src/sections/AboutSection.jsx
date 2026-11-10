@@ -13,6 +13,7 @@ import {
   BookOpen 
 } from 'lucide-react';
 import { personalData, statsData } from '../data/content';
+import agajaProfile from '../assets/agaja-profile.jpg';
 
 // Count up component that triggers when scrolled into view
 function CountUpNumber({ target, suffix = '+' }) {
@@ -101,8 +102,9 @@ export default function AboutSection() {
 
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.2)] shrink-0">
-                <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" />
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden border border-neon-cyan/40 shadow-[0_0_15px_rgba(34,211,238,0.25)] shrink-0 bg-space-950 p-0.5">
+                <img src={agajaProfile} alt={personalData.name} className="w-full h-full object-cover rounded-xl" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-space-950" />
               </div>
               <div>
                 <h3 className="font-orbitron font-bold text-base sm:text-xl text-white">
