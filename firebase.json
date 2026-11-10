@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "agaja-ts",
     "public": "dist",
     "ignore": [
       "firebase.json",
