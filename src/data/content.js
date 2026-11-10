@@ -22,10 +22,10 @@ export const personalData = {
     "When I'm not writing code or experimenting with AI models, I enjoy solving algorithmic challenges, exploring open-source repositories, and designing futuristic user interfaces."
   ],
   typewriterWords: [
-    "AI & ML Enthusiast",
-    "Full Stack Developer",
-    "Problem Solver",
-    "Future Tech Explorer"
+    "AI & ML ENTHUSIAST",
+    "FULL STACK DEVELOPER",
+    "PROBLEM SOLVER",
+    "FUTURE TECH EXPLORER"
   ]
 };
 

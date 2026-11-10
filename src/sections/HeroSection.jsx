@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { 
-  ArrowRight, 
-  Terminal, 
-  FileCode, 
-  Sparkles, 
-  Cpu, 
-  Layers, 
-  ExternalLink, 
-  Github, 
-  Download, 
-  ShieldCheck, 
-  ChevronRight, 
+import {
+  ArrowRight,
+  Terminal,
+  FileCode,
+  Sparkles,
+  Cpu,
+  Layers,
+  ExternalLink,
+  Github,
+  Download,
+  ShieldCheck,
+  ChevronRight,
   FolderGit2,
   Search,
   GitBranch,
@@ -140,7 +140,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-        
+
         {/* Top Mini HUD Status Pill */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -159,7 +159,7 @@ export default function HeroSection() {
               {personalData.role}
             </span>
             <span className="text-slate-600 hidden sm:inline">|</span>
-            <span className="font-mono text-[11px] text-neon-cyan hidden md:inline">
+            <span className="font-mono text-[11px] text-neon-cyan hidden md:inline uppercase tracking-wider">
               {personalData.college.split(',')[0]}
             </span>
           </div>
@@ -182,7 +182,7 @@ export default function HeroSection() {
           >
             {/* Outer Rotating Conic Neon Halo */}
             <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-neon-cyan via-neon-purple to-neon-magenta opacity-70 blur-md group-hover:opacity-100 group-hover:blur-lg transition-all duration-500 animate-spin [animation-duration:12s]" />
-            
+
             {/* Concentric Cyber Reticle Ring */}
             <div className="absolute -inset-1 rounded-full border border-dashed border-neon-cyan/50 animate-spin [animation-duration:25s] pointer-events-none" />
 
@@ -251,7 +251,7 @@ export default function HeroSection() {
             className="h-9 sm:h-12 flex items-center justify-center font-mono text-base sm:text-2xl text-slate-300"
           >
             <span className="text-neon-cyan mr-2 font-bold">&gt;</span>
-            <span className="text-white font-semibold">{displayText}</span>
+            <span className="text-white font-semibold uppercase tracking-wider">{displayText}</span>
             <span className="inline-block w-2.5 h-5 sm:h-6 ml-1 bg-neon-cyan animate-pulse" />
           </motion.div>
 
@@ -259,9 +259,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-3 text-xs sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed px-1 sm:px-0"
+            className="mt-3 text-xs sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed px-1 sm:px-0 font-medium tracking-wide uppercase"
           >
-            {personalData.tagline} • Specially calibrated for deep learning, modern web experiences, and scalable system engineering.
+            {personalData.tagline} • Specially Calibrated For Deep Learning, Modern Web Experiences, And Scalable System Engineering.
           </motion.p>
 
           {/* Action CTAs */}
@@ -361,10 +361,10 @@ export default function HeroSection() {
 
           {/* Grid Layout: Left VS Code IDE + Right Project Showcase Cards (Desktop Cockpit) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
+
             {/* Left Column: Realistic Mock VS Code Editor */}
             <div className="w-full lg:col-span-5 rounded-2xl bg-space-950/90 border border-white/10 overflow-hidden shadow-inner flex flex-col">
-              
+
               {/* Window Header */}
               <div className="flex items-center justify-between bg-space-900/90 border-b border-white/10 px-3 py-2 text-xs font-mono">
                 <div className="flex items-center gap-2">
@@ -382,11 +382,10 @@ export default function HeroSection() {
                     setActiveTab('js');
                     playTabSwitch();
                   }}
-                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${
-                    activeTab === 'js'
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${activeTab === 'js'
                       ? 'bg-space-950 border-t-2 border-neon-cyan text-neon-cyan font-medium'
                       : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                    }`}
                 >
                   <FileCode className="w-3.5 h-3.5 shrink-0" />
                   <span>CODE_GENESIS.JS</span>
@@ -396,11 +395,10 @@ export default function HeroSection() {
                     setActiveTab('py');
                     playTabSwitch();
                   }}
-                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${
-                    activeTab === 'py'
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${activeTab === 'py'
                       ? 'bg-space-950 border-t-2 border-neon-purple text-neon-purple font-medium'
                       : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                    }`}
                 >
                   <FolderGit2 className="w-3.5 h-3.5 shrink-0" />
                   <span>neural_core.py</span>
@@ -572,7 +570,7 @@ export default function HeroSection() {
 
           {/* Bottom In-Frame Row: Responsive Layout Preview + Achievements (Tablet/Desktop Only) */}
           <div className="mt-6 pt-5 border-t border-white/10 hidden sm:grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-            
+
             {/* Left: Responsive Layout Preview Strip */}
             <div className="md:col-span-7 flex items-center gap-4">
               <div className="text-[11px] font-mono text-neon-cyan uppercase tracking-wider font-semibold shrink-0">
