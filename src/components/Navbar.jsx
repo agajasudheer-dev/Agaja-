@@ -45,32 +45,32 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-40 px-3 sm:px-6 lg:px-8 pt-3 sm:pt-4 transition-all duration-300">
       <div
         className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 border ${
           scrolled
-            ? 'bg-space-900/85 backdrop-blur-xl border-neon-cyan/20 shadow-[0_8px_32px_rgba(0,0,0,0.6)] py-3 px-5 sm:px-6'
-            : 'bg-space-900/40 backdrop-blur-md border-white/5 py-4 px-5 sm:px-6'
+            ? 'bg-space-900/90 backdrop-blur-xl border-neon-cyan/20 shadow-[0_8px_32px_rgba(0,0,0,0.6)] py-2.5 sm:py-3 px-3.5 sm:px-6'
+            : 'bg-space-900/50 backdrop-blur-md border-white/5 py-3 sm:py-4 px-3.5 sm:px-6'
         }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo / Callout */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
             aria-label="Back to Top"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 border border-neon-cyan/40 flex items-center justify-center group-hover:border-neon-cyan transition-colors shadow-neon-cyan/20">
-              <Code2 className="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-neon-cyan rounded-full animate-ping" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-neon-cyan rounded-full" />
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 border border-neon-cyan/40 flex items-center justify-center group-hover:border-neon-cyan transition-colors shadow-neon-cyan/20 shrink-0">
+              <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-neon-cyan group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-1 -right-1 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-neon-cyan rounded-full animate-ping" />
+              <span className="absolute -top-1 -right-1 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-neon-cyan rounded-full" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-orbitron font-bold text-base sm:text-lg tracking-wider bg-gradient-to-r from-white via-neon-cyan to-neon-purple bg-clip-text text-transparent">
+                <span className="font-orbitron font-bold text-sm sm:text-lg tracking-wider bg-gradient-to-r from-white via-neon-cyan to-neon-purple bg-clip-text text-transparent">
                   {personalData.name.toUpperCase()}
                 </span>
-                <span className="text-[10px] font-mono text-neon-cyan px-1.5 py-0.5 rounded bg-neon-cyan/10 border border-neon-cyan/30">
+                <span className="text-[9px] sm:text-[10px] font-mono text-neon-cyan px-1.5 py-0.5 rounded bg-neon-cyan/10 border border-neon-cyan/30">
                   DEV
                 </span>
               </div>

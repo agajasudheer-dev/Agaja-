@@ -24,7 +24,7 @@ export default function ResponsivePreview() {
       <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/5 via-transparent to-neon-purple/5 rounded-3xl -z-10 blur-xl" />
 
       {/* Frame Container */}
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border-neon-cyan/30 relative overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.7)]">
+      <div className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-10 border-neon-cyan/30 relative overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.7)]">
         {/* Glowing Corner Accents */}
         <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-neon-cyan" />
         <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-neon-cyan" />

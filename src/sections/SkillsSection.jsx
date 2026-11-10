@@ -63,7 +63,7 @@ export default function SkillsSection() {
       </div>
 
       {/* Category Selection Tabs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 mb-10 sm:mb-12">
         {skillsData.categories.map((cat) => {
           const Icon = iconMap[cat.id] || Cpu;
           const isActive = activeCategory === cat.id;
@@ -72,27 +72,27 @@ export default function SkillsSection() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center gap-3.5 ${
+              className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-300 flex items-center gap-2.5 sm:gap-3.5 ${
                 isActive
                   ? 'bg-space-900/90 border-neon-cyan shadow-[0_0_20px_rgba(34,211,238,0.25)]'
                   : 'bg-space-950/60 border-white/10 hover:border-white/20 hover:bg-space-900/40 text-slate-400'
               }`}
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0"
                 style={{
                   backgroundColor: isActive ? `${cat.accent}20` : 'rgba(255,255,255,0.05)',
                   border: `1px solid ${isActive ? cat.accent : 'rgba(255,255,255,0.1)'}`,
                   color: isActive ? cat.accent : '#94a3b8'
                 }}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <h3 className={`font-orbitron text-xs sm:text-sm font-bold ${isActive ? 'text-white' : 'text-slate-300'}`}>
+              <div className="min-w-0">
+                <h3 className={`font-orbitron text-[11px] sm:text-sm font-bold truncate ${isActive ? 'text-white' : 'text-slate-300'}`}>
                   {cat.name}
                 </h3>
-                <span className="text-[10px] font-mono text-slate-500">
+                <span className="text-[9px] sm:text-[10px] font-mono text-slate-500 block truncate">
                   {cat.skills.length} competencies
                 </span>
               </div>
@@ -107,7 +107,7 @@ export default function SkillsSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="glass-panel rounded-3xl p-6 sm:p-8 border-neon-cyan/20"
+        className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-8 border-neon-cyan/20"
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-white/10 gap-3">
           <div>

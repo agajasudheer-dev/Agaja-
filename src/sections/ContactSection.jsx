@@ -122,8 +122,8 @@ export default function ContactSection() {
           className="lg:col-span-5 flex flex-col justify-between gap-6"
         >
           {/* Quick Contact Card */}
-          <div className="glass-panel rounded-3xl p-6 sm:p-8 border-neon-cyan/20">
-            <h3 className="font-orbitron font-bold text-xl text-white mb-2">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-8 border-neon-cyan/20">
+            <h3 className="font-orbitron font-bold text-lg sm:text-xl text-white mb-2">
               Uplink Channels
             </h3>
             <p className="text-xs sm:text-sm text-slate-400 mb-6">
@@ -132,20 +132,20 @@ export default function ContactSection() {
 
             <div className="space-y-4">
               {/* Email Copier */}
-              <div className="p-4 rounded-2xl bg-space-950/80 border border-white/10 flex items-center justify-between group hover:border-neon-cyan/40 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-space-950/80 border border-white/10 flex items-center justify-between group hover:border-neon-cyan/40 transition-colors">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="p-2 sm:p-2.5 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-[10px] font-mono text-slate-400 uppercase">Primary Inbox</div>
-                    <div className="text-xs sm:text-sm font-mono text-white font-medium">{personalData.email}</div>
+                    <div className="text-xs sm:text-sm font-mono text-white font-medium truncate">{personalData.email}</div>
                   </div>
                 </div>
 
                 <button
                   onClick={handleCopyEmail}
-                  className="p-2 rounded-lg bg-white/5 hover:bg-neon-cyan/20 text-slate-300 hover:text-neon-cyan transition-colors"
+                  className="p-2 rounded-lg bg-white/5 hover:bg-neon-cyan/20 text-slate-300 hover:text-neon-cyan transition-colors shrink-0 ml-2"
                   aria-label="Copy email address"
                 >
                   {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -153,8 +153,8 @@ export default function ContactSection() {
               </div>
 
               {/* Campus Location */}
-              <div className="p-4 rounded-2xl bg-space-950/80 border border-white/10 flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-neon-purple/10 border border-neon-purple/30 text-neon-purple">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-space-950/80 border border-white/10 flex items-center gap-3">
+                <div className="p-2 sm:p-2.5 rounded-xl bg-neon-purple/10 border border-neon-purple/30 text-neon-purple shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
@@ -167,11 +167,11 @@ export default function ContactSection() {
           </div>
 
           {/* Social Links Matrix */}
-          <div className="glass-panel-purple rounded-3xl p-6 sm:p-8 border-neon-purple/20">
-            <h4 className="font-orbitron font-bold text-base text-white mb-4">
+          <div className="glass-panel-purple rounded-2xl sm:rounded-3xl p-4 sm:p-8 border-neon-purple/20">
+            <h4 className="font-orbitron font-bold text-sm sm:text-base text-white mb-4">
               Decentralized Nodes
             </h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {socialLinks.map((social) => {
                 const Icon = socialIconMap[social.icon] || Github;
                 return (
@@ -180,10 +180,10 @@ export default function ContactSection() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-2xl bg-space-950/70 border border-white/5 hover:border-neon-purple/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] flex items-center gap-3 group"
+                    className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-space-950/70 border border-white/5 hover:border-neon-purple/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] flex items-center gap-2.5 sm:gap-3 group"
                   >
                     <div
-                      className="p-2 rounded-xl group-hover:scale-110 transition-transform"
+                      className="p-2 rounded-lg sm:rounded-xl group-hover:scale-110 transition-transform shrink-0"
                       style={{
                         backgroundColor: `${social.glowColor}15`,
                         color: social.glowColor,
@@ -192,11 +192,11 @@ export default function ContactSection() {
                     >
                       <Icon className="w-4 h-4" />
                     </div>
-                    <div>
-                      <div className="text-xs font-semibold text-white group-hover:text-neon-purple transition-colors">
+                    <div className="min-w-0">
+                      <div className="text-xs font-semibold text-white group-hover:text-neon-purple transition-colors truncate">
                         {social.name}
                       </div>
-                      <div className="text-[10px] font-mono text-slate-400">
+                      <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 truncate">
                         {social.handle}
                       </div>
                     </div>
@@ -214,7 +214,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-10 border-neon-cyan/30 relative overflow-hidden"
+          className="lg:col-span-7 glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-10 border-neon-cyan/30 relative overflow-hidden"
         >
           {/* Top Decorative cyber line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta" />

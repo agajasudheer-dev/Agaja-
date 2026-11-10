@@ -47,13 +47,13 @@ function CountUpNumber({ target, suffix = '+' }) {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Background Glow Accents */}
       <div className="absolute top-1/2 -left-36 w-96 h-96 bg-cyan-600/10 blur-[120px] pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-0 w-80 h-80 bg-purple-600/10 blur-[110px] pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ export default function AboutSection() {
       </div>
 
       {/* Main About Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch mb-12 sm:mb-16">
         
         {/* Left Column: Bio & College Info */}
         <motion.div
@@ -94,18 +94,18 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border-neon-cyan/20 relative overflow-hidden"
+          className="lg:col-span-7 glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between border-neon-cyan/20 relative overflow-hidden"
         >
           {/* Top highlight bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta" />
 
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.2)]">
-                <GraduationCap className="w-6 h-6" />
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.2)] shrink-0">
+                <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h3 className="font-orbitron font-bold text-lg sm:text-xl text-white">
+                <h3 className="font-orbitron font-bold text-base sm:text-xl text-white">
                   Academic Credentials
                 </h3>
                 <p className="text-xs font-mono text-neon-cyan">
@@ -115,20 +115,20 @@ export default function AboutSection() {
             </div>
 
             {/* Institution Badge */}
-            <div className="p-4 rounded-2xl bg-space-950/70 border border-white/10 mb-6 flex items-start gap-3.5">
-              <MapPin className="w-5 h-5 text-neon-magenta shrink-0 mt-0.5" />
+            <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-space-950/70 border border-white/10 mb-6 flex items-start gap-3">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-neon-magenta shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-white text-sm sm:text-base">
+                <h4 className="font-semibold text-white text-xs sm:text-base">
                   {personalData.college}
                 </h4>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-[11px] sm:text-xs text-slate-400 mt-1">
                   Focusing on foundational algorithms, artificial intelligence paradigms, machine learning mathematics, and computational thinking.
                 </p>
               </div>
             </div>
 
             {/* Bio Paragraphs */}
-            <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <div className="space-y-3 sm:space-y-4 text-slate-300 text-xs sm:text-base leading-relaxed">
               {personalData.bio.map((paragraph, index) => (
                 <p key={index} className="text-slate-300/90">
                   {paragraph}
@@ -138,29 +138,29 @@ export default function AboutSection() {
           </div>
 
           {/* Quick Pillars */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8 pt-6 border-t border-white/10">
-            <div className="p-3 rounded-xl bg-space-900/60 border border-white/5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/10">
+            <div className="p-2.5 sm:p-3 rounded-xl bg-space-900/60 border border-white/5">
               <div className="text-neon-cyan font-mono text-xs font-semibold mb-1 flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>AI First</span>
               </div>
-              <p className="text-[11px] text-slate-400">Deep Learning & Vision</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">Deep Learning & Vision</p>
             </div>
 
-            <div className="p-3 rounded-xl bg-space-900/60 border border-white/5">
+            <div className="p-2.5 sm:p-3 rounded-xl bg-space-900/60 border border-white/5">
               <div className="text-neon-purple font-mono text-xs font-semibold mb-1 flex items-center gap-1.5">
                 <Code className="w-3.5 h-3.5" />
                 <span>Modern Web</span>
               </div>
-              <p className="text-[11px] text-slate-400">React, Tailwind & Node</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">React, Tailwind & Node</p>
             </div>
 
-            <div className="p-3 rounded-xl bg-space-900/60 border border-white/5 col-span-2 sm:col-span-1">
+            <div className="p-2.5 sm:p-3 rounded-xl bg-space-900/60 border border-white/5 col-span-2 sm:col-span-1">
               <div className="text-neon-magenta font-mono text-xs font-semibold mb-1 flex items-center gap-1.5">
                 <Flame className="w-3.5 h-3.5" />
                 <span>High Drive</span>
               </div>
-              <p className="text-[11px] text-slate-400">Daily learning & growth</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">Daily learning & growth</p>
             </div>
           </div>
         </motion.div>
@@ -171,14 +171,14 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-5 flex flex-col gap-6"
+          className="lg:col-span-5 flex flex-col gap-5 sm:gap-6"
         >
           {/* Cyber Terminal Card */}
-          <div className="glass-panel-purple rounded-3xl p-6 border-neon-purple/20 shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
-            <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-xs font-mono">
+          <div className="glass-panel-purple rounded-2xl sm:rounded-3xl p-4 sm:p-6 border-neon-purple/20 shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
+            <div className="flex items-center justify-between pb-3 mb-3 sm:mb-4 border-b border-white/10 text-xs font-mono">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-neon-purple" />
-                <span className="text-slate-300">SYSTEM_DIAGNOSTICS.LOG</span>
+                <span className="text-slate-300 text-[11px] sm:text-xs">SYSTEM_DIAGNOSTICS.LOG</span>
               </div>
               <span className="text-[10px] text-emerald-400 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -186,7 +186,7 @@ export default function AboutSection() {
               </span>
             </div>
 
-            <div className="font-mono text-xs space-y-2.5 text-slate-300">
+            <div className="font-mono text-[11px] sm:text-xs space-y-2 sm:space-y-2.5 text-slate-300">
               <div className="flex items-start gap-2">
                 <span className="text-neon-cyan">$</span>
                 <span className="text-slate-400">user.identity:</span>
@@ -205,28 +205,28 @@ export default function AboutSection() {
               <div className="flex items-start gap-2">
                 <span className="text-neon-cyan">$</span>
                 <span className="text-slate-400">state:</span>
-                <span className="text-neon-cyan">"Ready for internships & innovative builds"</span>
+                <span className="text-neon-cyan">"Ready for internships & builds"</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-neon-cyan">$</span>
-                <span className="text-slate-400">core_passions:</span>
-                <span className="text-purple-300">["Generative AI", "Scalable Web", "Creative UI"]</span>
+                <span className="text-slate-400">passions:</span>
+                <span className="text-purple-300">["Generative AI", "Web Systems"]</span>
               </div>
             </div>
           </div>
 
           {/* Key Value Highlight */}
-          <div className="glass-panel-magenta rounded-3xl p-6 border-neon-magenta/20 flex-1 flex flex-col justify-between">
+          <div className="glass-panel-magenta rounded-2xl sm:rounded-3xl p-4 sm:p-6 border-neon-magenta/20 flex-1 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-neon-magenta/10 border border-neon-magenta/30 flex items-center justify-center text-neon-magenta">
-                  <Activity className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neon-magenta/10 border border-neon-magenta/30 flex items-center justify-center text-neon-magenta shrink-0">
+                  <Activity className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="font-orbitron font-bold text-white text-base">
+                  <h4 className="font-orbitron font-bold text-white text-sm sm:text-base">
                     Mission Directive
                   </h4>
-                  <p className="text-[11px] font-mono text-neon-magenta">Engineering with Purpose</p>
+                  <p className="text-[10px] sm:text-[11px] font-mono text-neon-magenta">Engineering with Purpose</p>
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -234,7 +234,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
+            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs font-mono text-slate-400">
               <span>Semester: 1st Year</span>
               <span className="text-neon-cyan">Kerala, India</span>
             </div>
@@ -249,19 +249,19 @@ export default function AboutSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+        className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6"
       >
         {statsData.map((stat, idx) => (
           <div
             key={stat.id}
-            className="group relative glass-panel rounded-2xl p-5 sm:p-6 border-white/10 hover:border-neon-cyan/40 transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)] text-center overflow-hidden"
+            className="group relative glass-panel rounded-2xl p-4 sm:p-6 border-white/10 hover:border-neon-cyan/40 transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)] text-center overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-16 h-16 bg-neon-cyan/5 rounded-bl-full pointer-events-none group-hover:bg-neon-cyan/10 transition-colors" />
             <CountUpNumber target={stat.value} suffix={stat.suffix} />
-            <h4 className="font-orbitron font-bold text-sm sm:text-base text-white mt-2">
+            <h4 className="font-orbitron font-bold text-xs sm:text-base text-white mt-2">
               {stat.label}
             </h4>
-            <p className="text-xs text-slate-400 mt-1 font-mono">
+            <p className="text-[11px] sm:text-xs text-slate-400 mt-1 font-mono">
               {stat.description}
             </p>
           </div>

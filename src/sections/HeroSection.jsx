@@ -145,29 +145,34 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-6 px-2"
         >
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-space-900/80 border border-neon-cyan/30 backdrop-blur-md shadow-[0_0_15px_rgba(34,211,238,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-neon-cyan animate-ping" />
-            <span className="font-mono text-xs uppercase tracking-wider text-slate-300">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-space-900/85 border border-neon-cyan/30 backdrop-blur-md shadow-[0_0_15px_rgba(34,211,238,0.2)] max-w-full">
+            <span className="w-2 h-2 rounded-full bg-neon-cyan animate-ping shrink-0" />
+            {/* Mobile Compact Label */}
+            <span className="font-mono text-[11px] uppercase tracking-wider text-slate-200 sm:hidden truncate">
+              B.Tech CSE (AI) • Thejus Engg
+            </span>
+            {/* Tablet & Desktop Full Label */}
+            <span className="font-mono text-xs uppercase tracking-wider text-slate-300 hidden sm:inline">
               {personalData.role}
             </span>
-            <span className="text-slate-600">|</span>
-            <span className="font-mono text-[11px] text-neon-cyan hidden sm:inline">
+            <span className="text-slate-600 hidden sm:inline">|</span>
+            <span className="font-mono text-[11px] text-neon-cyan hidden md:inline">
               {personalData.college.split(',')[0]}
             </span>
           </div>
         </motion.div>
 
         {/* Hero Headline & Typing Subtitle */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-10 px-2">
           <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-orbitron font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white mb-3"
           >
-            <span className="block text-xs sm:text-sm font-mono tracking-[0.35em] text-neon-cyan mb-2 uppercase">
+            <span className="block text-[11px] sm:text-sm font-mono tracking-[0.25em] sm:tracking-[0.35em] text-neon-cyan mb-2 uppercase">
               System Interface // Portfolio
             </span>
             <span
@@ -191,18 +196,18 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="h-10 sm:h-12 flex items-center justify-center font-mono text-lg sm:text-2xl text-slate-300"
+            className="h-9 sm:h-12 flex items-center justify-center font-mono text-base sm:text-2xl text-slate-300"
           >
             <span className="text-neon-cyan mr-2 font-bold">&gt;</span>
             <span className="text-white font-semibold">{displayText}</span>
-            <span className="inline-block w-2.5 h-6 ml-1 bg-neon-cyan animate-pulse" />
+            <span className="inline-block w-2.5 h-5 sm:h-6 ml-1 bg-neon-cyan animate-pulse" />
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-3 text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            className="mt-3 text-xs sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed px-1 sm:px-0"
           >
             {personalData.tagline} • Specially calibrated for deep learning, modern web experiences, and scalable system engineering.
           </motion.p>
@@ -212,11 +217,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-4"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-xs sm:max-w-none mx-auto"
           >
             <a
               href="#projects"
-              className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-space-950 bg-neon-cyan hover:bg-cyan-300 shadow-neon-cyan-lg hover:shadow-[0_0_30px_rgba(34,211,238,0.8)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-space-950 bg-neon-cyan hover:bg-cyan-300 shadow-neon-cyan-lg hover:shadow-[0_0_30px_rgba(34,211,238,0.8)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Explore Projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -226,7 +231,7 @@ export default function HeroSection() {
               href={personalData.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-space-900/80 border border-neon-cyan/40 hover:border-neon-cyan hover:bg-space-850 hover:shadow-neon-cyan transition-all"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-space-900/80 border border-neon-cyan/40 hover:border-neon-cyan hover:bg-space-850 hover:shadow-neon-cyan transition-all"
             >
               <Download className="w-4 h-4 text-neon-cyan" />
               <span>Resume PDF</span>
@@ -234,7 +239,7 @@ export default function HeroSection() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-300 bg-space-900/50 border border-white/10 hover:border-neon-purple hover:text-white hover:shadow-neon-purple transition-all"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-300 bg-space-900/50 border border-white/10 hover:border-neon-purple hover:text-white hover:shadow-neon-purple transition-all"
             >
               <Terminal className="w-4 h-4 text-neon-purple" />
               <span>Initiate Contact</span>
@@ -251,16 +256,16 @@ export default function HeroSection() {
             transform: `perspective(1400px) rotateX(${mousePos.y * -5}deg) rotateY(${mousePos.x * 5}deg)`,
             transition: 'transform 0.2s ease-out'
           }}
-          className="relative mt-8 rounded-3xl cyber-hud-frame p-4 sm:p-6 lg:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.85)] overflow-hidden"
+          className="relative mt-4 sm:mt-8 rounded-2xl sm:rounded-3xl cyber-hud-frame p-3.5 sm:p-6 lg:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.85)] overflow-hidden"
         >
           {/* Glowing HUD frame corner accents */}
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+          <div className="absolute top-0 left-0 w-6 sm:w-8 h-6 sm:h-8 border-t-2 border-l-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+          <div className="absolute top-0 right-0 w-6 sm:w-8 h-6 sm:h-8 border-t-2 border-r-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+          <div className="absolute bottom-0 left-0 w-6 sm:w-8 h-6 sm:h-8 border-b-2 border-l-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+          <div className="absolute bottom-0 right-0 w-6 sm:w-8 h-6 sm:h-8 border-b-2 border-r-2 border-neon-cyan shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
 
-          {/* Top HUD Header inside the Frame */}
-          <div className="flex flex-col items-center justify-center pb-6 mb-6 border-b border-neon-cyan/20 text-center relative">
+          {/* Desktop/Laptop Cockpit Header inside the Frame */}
+          <div className="hidden lg:flex flex-col items-center justify-center pb-6 mb-6 border-b border-neon-cyan/20 text-center relative">
             <div className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-1">
               {personalData.name.toUpperCase()} | FUTURISTIC DEVELOPER
             </div>
@@ -290,11 +295,23 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Grid Layout: Left VS Code IDE + Right Project Showcase Cards */}
+          {/* Mobile/Tablet Minimal Frame Bar (Eliminates redundant headers on small screens) */}
+          <div className="flex lg:hidden items-center justify-between pb-3 mb-3 border-b border-neon-cyan/20 text-xs font-mono">
+            <div className="flex items-center gap-2 text-neon-cyan">
+              <FileCode className="w-3.5 h-3.5" />
+              <span className="font-bold tracking-wider text-[11px] sm:text-xs">WORKSPACE // CODE_CORE</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-[10px] text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>LIVE</span>
+            </div>
+          </div>
+
+          {/* Grid Layout: Left VS Code IDE + Right Project Showcase Cards (Desktop Cockpit) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
             {/* Left Column: Realistic Mock VS Code Editor */}
-            <div className="lg:col-span-5 rounded-2xl bg-space-950/90 border border-white/10 overflow-hidden shadow-inner flex flex-col">
+            <div className="w-full lg:col-span-5 rounded-2xl bg-space-950/90 border border-white/10 overflow-hidden shadow-inner flex flex-col">
               
               {/* Window Header */}
               <div className="flex items-center justify-between bg-space-900/90 border-b border-white/10 px-3 py-2 text-xs font-mono">
@@ -302,7 +319,7 @@ export default function HeroSection() {
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
                   <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
-                  <span className="ml-2 text-slate-400 text-[11px]">AGAJA_IDE // CODE</span>
+                  <span className="ml-2 text-slate-400 text-[10px] sm:text-[11px] truncate">AGAJA_IDE // CODE</span>
                 </div>
               </div>
 
@@ -313,13 +330,13 @@ export default function HeroSection() {
                     setActiveTab('js');
                     playTabSwitch();
                   }}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-t transition-colors ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${
                     activeTab === 'js'
                       ? 'bg-space-950 border-t-2 border-neon-cyan text-neon-cyan font-medium'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  <FileCode className="w-3.5 h-3.5" />
+                  <FileCode className="w-3.5 h-3.5 shrink-0" />
                   <span>CODE_GENESIS.JS</span>
                 </button>
                 <button
@@ -327,41 +344,41 @@ export default function HeroSection() {
                     setActiveTab('py');
                     playTabSwitch();
                   }}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-t transition-colors ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-t transition-colors text-[11px] sm:text-xs ${
                     activeTab === 'py'
                       ? 'bg-space-950 border-t-2 border-neon-purple text-neon-purple font-medium'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  <FolderGit2 className="w-3.5 h-3.5" />
+                  <FolderGit2 className="w-3.5 h-3.5 shrink-0" />
                   <span>neural_core.py</span>
                 </button>
               </div>
 
               {/* Editor Workspace with Activity Bar + Line Numbers + Code */}
-              <div className="flex flex-1 min-h-[260px] overflow-hidden">
+              <div className="flex flex-1 min-h-[220px] sm:min-h-[260px] overflow-hidden">
                 {/* VS Code Left Activity Bar */}
-                <div className="w-10 bg-space-950 border-r border-white/5 py-3 flex flex-col items-center justify-between text-slate-500">
+                <div className="w-8 sm:w-10 bg-space-950 border-r border-white/5 py-3 flex flex-col items-center justify-between text-slate-500 shrink-0">
                   <div className="flex flex-col gap-3">
-                    <FileCode className="w-4 h-4 text-neon-cyan" />
-                    <Search className="w-4 h-4 hover:text-slate-300 transition-colors" />
-                    <GitBranch className="w-4 h-4 hover:text-slate-300 transition-colors" />
-                    <Play className="w-4 h-4 hover:text-slate-300 transition-colors" />
+                    <FileCode className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-neon-cyan" />
+                    <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 hover:text-slate-300 transition-colors" />
+                    <GitBranch className="w-3.5 sm:w-4 h-3.5 sm:h-4 hover:text-slate-300 transition-colors" />
+                    <Play className="w-3.5 sm:w-4 h-3.5 sm:h-4 hover:text-slate-300 transition-colors" />
                   </div>
-                  <Settings className="w-4 h-4 hover:text-slate-300 transition-colors" />
+                  <Settings className="w-3.5 sm:w-4 h-3.5 sm:h-4 hover:text-slate-300 transition-colors" />
                 </div>
 
                 {/* Line Numbers */}
-                <div className="w-8 py-3 bg-space-950/50 border-r border-white/5 text-slate-600 font-mono text-[11px] text-right pr-2 select-none">
+                <div className="w-7 sm:w-8 py-3 bg-space-950/50 border-r border-white/5 text-slate-600 font-mono text-[10px] sm:text-[11px] text-right pr-1.5 sm:pr-2 select-none shrink-0">
                   {Array.from({ length: 14 }).map((_, i) => (
                     <div key={i}>{i + 1}</div>
                   ))}
                 </div>
 
                 {/* Code Editor Body */}
-                <div className="p-3 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto selection:bg-neon-cyan/20 flex-1">
+                <div className="p-2.5 sm:p-3 font-mono text-[10.5px] sm:text-xs text-slate-300 leading-relaxed overflow-x-auto selection:bg-neon-cyan/20 flex-1">
                   {activeTab === 'js' ? (
-                    <pre className="text-[11px]">
+                    <pre className="text-[10.5px] sm:text-[11px]">
                       <code>
                         <span className="text-slate-600">// Agaja - AI Engineer & Full Stack</span>{'\n'}
                         <span className="text-neon-magenta">import</span> &#123; <span className="text-neon-cyan">NeuralEngine</span> &#125; <span className="text-neon-magenta">from</span> <span className="text-emerald-400">'@thejus/ai-core'</span>;{'\n\n'}
@@ -378,7 +395,7 @@ export default function HeroSection() {
                       </code>
                     </pre>
                   ) : (
-                    <pre className="text-[11px]">
+                    <pre className="text-[10.5px] sm:text-[11px]">
                       <code>
                         <span className="text-slate-600"># neural_core.py - PyTorch Vision</span>{'\n'}
                         <span className="text-neon-magenta">import</span> <span className="text-cyan-300">torch</span>{'\n'}
@@ -396,25 +413,40 @@ export default function HeroSection() {
               </div>
 
               {/* Status bar */}
-              <div className="mt-auto bg-space-900 border-t border-white/5 px-4 py-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400">
-                <div className="flex items-center gap-3">
+              <div className="mt-auto bg-space-900 border-t border-white/5 px-3 sm:px-4 py-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <span className="text-neon-cyan">UTF-8</span>
                   <span className={activeTab === 'js' ? 'text-neon-cyan' : 'text-neon-purple'}>
                     {activeTab === 'js' ? 'JavaScript' : 'Python (PyTorch)'}
                   </span>
-                  <span className="text-emerald-400">
+                  <span className="text-emerald-400 hidden sm:inline">
                     {activeTab === 'js' ? 'Ln 22, Col 1' : 'Ln 18, Col 1'}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Prettier Ready</span>
+                  <span>Ready</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: 4 Glowing Project Cards Matrix (Matching Mockup) */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* Mobile-only Quick Jump to Featured Projects */}
+            <div className="lg:hidden flex items-center justify-between p-3 rounded-xl bg-space-950/80 border border-neon-cyan/30 text-xs font-mono">
+              <div className="flex items-center gap-2 text-slate-300">
+                <Sparkles className="w-3.5 h-3.5 text-neon-cyan shrink-0" />
+                <span className="truncate">4 Featured Projects in Catalog</span>
+              </div>
+              <a
+                href="#projects"
+                className="text-neon-cyan hover:text-white flex items-center gap-1 font-semibold shrink-0 transition-colors"
+              >
+                <span>View</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* Right Column: 4 Glowing Project Cards Matrix (Desktop Cockpit Only) */}
+            <div className="hidden lg:grid lg:col-span-7 grid-cols-1 sm:grid-cols-2 gap-3.5">
               {projectsData.map((project, idx) => (
                 <div
                   key={project.id}
@@ -486,8 +518,8 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Bottom In-Frame Row: Responsive Layout Preview + Achievements */}
-          <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+          {/* Bottom In-Frame Row: Responsive Layout Preview + Achievements (Tablet/Desktop Only) */}
+          <div className="mt-6 pt-5 border-t border-white/10 hidden sm:grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             
             {/* Left: Responsive Layout Preview Strip */}
             <div className="md:col-span-7 flex items-center gap-4">

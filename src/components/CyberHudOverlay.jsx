@@ -44,34 +44,34 @@ export default function CyberHudOverlay() {
       <div className="absolute inset-0 cyber-scanline opacity-15 pointer-events-none" />
 
       {/* ================= TOP LEFT HUD BRACKET ================= */}
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-col gap-1">
+      <div className="hidden md:flex absolute top-6 left-6 flex-col gap-1">
         <div className="flex items-center gap-2 text-[10px] font-mono text-neon-cyan tracking-widest">
           <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping" />
           <span className="font-bold">SYS_ONLINE // V2.4</span>
           <span className="text-slate-600">|</span>
-          <span className="text-slate-400 hidden md:inline">FREQ: 2.4GHz</span>
+          <span className="text-slate-400">FREQ: 2.4GHz</span>
         </div>
         <div className="flex items-center gap-2">
           {/* Visual Corner Bracket */}
           <div className="w-12 h-3 border-t-2 border-l-2 border-neon-cyan/50 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
-          <span className="text-[9px] font-mono text-slate-500 hidden sm:inline tracking-wider">
+          <span className="text-[9px] font-mono text-slate-500 tracking-wider">
             [NODE: THEJUS_ENGG]
           </span>
         </div>
       </div>
 
       {/* ================= TOP RIGHT HUD BRACKET ================= */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex flex-col items-end gap-1">
+      <div className="hidden md:flex absolute top-6 right-6 flex-col items-end gap-1">
         <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest">
-          <span className="text-slate-400 hidden md:inline">LAT: 10.5276° N • LNG: 76.2144° E</span>
-          <span className="text-slate-600 hidden md:inline">|</span>
+          <span className="text-slate-400">LAT: 10.5276° N • LNG: 76.2144° E</span>
+          <span className="text-slate-600">|</span>
           <span className="text-emerald-400 flex items-center gap-1 font-semibold">
             <Wifi className="w-3 h-3" />
             <span>{ping}ms</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[9px] font-mono text-slate-500 hidden sm:inline tracking-wider">
+          <span className="text-[9px] font-mono text-slate-500 tracking-wider">
             KERALA_NODE // CSE_AI
           </span>
           <div className="w-12 h-3 border-t-2 border-r-2 border-neon-cyan/50 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
@@ -79,7 +79,7 @@ export default function CyberHudOverlay() {
       </div>
 
       {/* ================= BOTTOM LEFT HUD RADAR ================= */}
-      <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-end gap-3">
+      <div className="hidden md:flex absolute bottom-6 left-6 items-end gap-3">
         {/* Animated Radar Reticle */}
         <div className="relative w-12 h-12 rounded-full border border-neon-cyan/30 bg-space-950/70 p-1 flex items-center justify-center shadow-[0_0_12px_rgba(34,211,238,0.2)]">
           {/* Inner concentric circles */}
@@ -101,7 +101,7 @@ export default function CyberHudOverlay() {
           <div className="absolute top-2 right-2.5 w-1 h-1 bg-neon-magenta rounded-full animate-ping" />
         </div>
 
-        <div className="hidden sm:flex flex-col gap-0.5">
+        <div className="flex flex-col gap-0.5">
           <div className="flex items-center gap-1.5 text-[10px] font-mono text-slate-300">
             <span className="text-neon-cyan">RADAR // ACTIVE</span>
             <span className="text-slate-600">•</span>
@@ -112,14 +112,14 @@ export default function CyberHudOverlay() {
       </div>
 
       {/* ================= BOTTOM RIGHT TELEMETRY ================= */}
-      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col items-end gap-1">
+      <div className="hidden md:flex absolute bottom-6 right-6 flex-col items-end gap-1">
         <div className="w-16 h-2 border-b-2 border-r-2 border-neon-cyan/50 shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
         <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400 tracking-wider">
           <span className="text-neon-cyan font-bold">{fps}.0 FPS</span>
           <span className="text-slate-600">•</span>
           <span className="text-neon-purple font-semibold">HARDWARE_ACCEL</span>
-          <span className="text-slate-600 hidden md:inline">•</span>
-          <span className="text-slate-500 hidden md:inline">SEC_STATUS: OPTIMAL</span>
+          <span className="text-slate-600">•</span>
+          <span className="text-slate-500">SEC_STATUS: OPTIMAL</span>
         </div>
       </div>
 

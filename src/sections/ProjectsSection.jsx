@@ -20,6 +20,7 @@ function TiltProjectCard({ project }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
+    if (window.innerWidth < 768) return;
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -61,7 +62,7 @@ function TiltProjectCard({ project }) {
             ? `0 20px 45px -15px ${project.accentGlow}, 0 0 1px 1px ${project.accentColor}`
             : '0 10px 30px -15px rgba(0,0,0,0.7), 0 0 1px 1px rgba(255,255,255,0.08)'
         }}
-        className="relative h-full rounded-3xl bg-space-950/85 backdrop-blur-xl border border-white/10 p-5 sm:p-6 flex flex-col justify-between overflow-hidden group cursor-pointer"
+        className="relative h-full rounded-2xl sm:rounded-3xl bg-space-950/85 backdrop-blur-xl border border-white/10 p-4 sm:p-6 flex flex-col justify-between overflow-hidden group cursor-pointer"
       >
         {/* Dynamic Glowing Accent Aura */}
         <div
