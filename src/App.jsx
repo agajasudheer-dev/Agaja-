@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Lenis from 'lenis';
 import CyberCanvas from './components/CyberCanvas';
+import CyberHudOverlay from './components/CyberHudOverlay';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
@@ -47,6 +48,9 @@ export default function App() {
     <div className="relative min-h-screen bg-space-950 text-slate-100 selection:bg-neon-cyan/25 selection:text-neon-cyan overflow-x-hidden">
       {/* 60fps Interactive Starfield & Neural Constellation Canvas */}
       <CyberCanvas />
+
+      {/* Modern Cyber HUD Telemetry & Corner Overlay */}
+      <CyberHudOverlay />
 
       {/* Cyber Reticle Cursor */}
       <CustomCursor />

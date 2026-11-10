@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Milestone, 
-  Clock, 
-  CheckCircle2, 
-  CircleDot, 
-  Award, 
+import {
+  Milestone,
+  Clock,
+  CheckCircle2,
+  CircleDot,
+  Award,
   Calendar,
   Sparkles
 } from 'lucide-react';
@@ -66,9 +66,8 @@ export default function TimelineSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col sm:flex-row items-start sm:items-center ${
-                  isEven ? 'sm:flex-row-reverse' : ''
-                }`}
+                className={`relative flex flex-col sm:flex-row items-start sm:items-center ${isEven ? 'sm:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Node Center Pin */}
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-space-950 border-2 border-neon-cyan flex items-center justify-center shadow-neon-cyan z-20">
@@ -86,11 +85,10 @@ export default function TimelineSection() {
                         <span>{item.year}</span>
                       </span>
 
-                      <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono border ${
-                        item.statusType === 'active'
+                      <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono border ${item.statusType === 'active'
                           ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
                           : 'bg-purple-500/10 text-purple-300 border-purple-500/30'
-                      }`}>
+                        }`}>
                         {item.status}
                       </span>
                     </div>
